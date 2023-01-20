@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			html {
+				background-color: #333333;
+				color: #f9f9f9;
+				min-width: 400px;
+			}
+
+			body {
+				font-size: 16px;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			.v-bar {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.v-bar > *:not(:last-child) {
+				margin-bottom: 10px;
+			}
+
+			.copy-field:hover {
+				outline-width: 2px;
+				transition: outline-width 70ms ease-in-out;
+			}
+
+			.copy-field {
+				padding: 10px;
+				background-color: #3d3d3d;
+				border-radius: 5px;
+				display: flex;
+				flex-direction: row;
+				outline: 0px solid #67a8e4;
+				transition: outline-width 70ms ease-in-out;
+				cursor: pointer;
+				align-items: center;
+			}
+
+			.copy-field__input {
+				border: none;
+				outline: none;
+				background-color: #3d3d3d;
+				color: #fff;
+				cursor: inherit;
+			}
+
+			.copy-field__input-wrapper {
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+			}
+
+			.copy-field__label {
+				cursor: inherit;
+				font-size: 0.75rem;
+			}
+
+			.copy-field__icon {
+				font-size: 1.3rem;
+			}
+
+			h4 {
+				margin: 0 0 10px 0;
+			}
+
+			p {
+				margin: 0 0 10px 0;
+			}
+		</style>
+		<script></script>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<div class="hidden" id="noaccess-ui">
+			<h4>🗿 Extension doesn't have access to this page.</h4>
+			<p>Extension can run only on urls that match this pattern https://*.atlassian.net/*.</p>
+		</div>
+		<div class="hidden" id="success-ui">
+			<h4>✅ Successfully copied branch name!</h4>
+			<p>The extension found the issue name on this page and copied the corresponding branch name.</p>
+			<div class="v-bar">
+				<div title="Click to copy" id="task" class="copy-field">
+					<div class="copy-field__input-wrapper">
+						<label class="copy-field__label">Task name</label>
+						<input readonly class="copy-field__input" />
+					</div>
+					<span class="copy-field__icon">📋</span>
+				</div>
+				<div title="Click to copy" id="branch" class="copy-field">
+					<div class="copy-field__input-wrapper">
+						<label class="copy-field__label">Branch name</label>
+						<input readonly class="copy-field__input" />
+					</div>
+					<span class="copy-field__icon">📋</span>
+				</div>
+			</div>
+		</div>
+		<div class="hidden" id="failure-ui">
+			<h4></h4>
+			<p></p>
+		</div>
+	</body>
+	<script type="text/javascript" src="popup.js"></script>
+</html>
