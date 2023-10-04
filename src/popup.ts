@@ -3,9 +3,9 @@ import { taskNameToBranchName } from './taskNameToBranchName';
 const isNil = (value: unknown): value is null | undefined => value === null || value === undefined;
 
 const getTaskName = async (): Promise<string | undefined> => {
-	const heading = document.querySelector('[data-test-id="issue.views.issue-base.foundation.summary.heading"]');
+	const heading = document.querySelector('[data-testid="issue.views.issue-base.foundation.summary.heading"]');
 	const breadcrumb = document.querySelector(
-		'[data-test-id="issue.views.issue-base.foundation.breadcrumbs.breadcrumb-current-issue-container"]',
+		'[data-testid="issue.views.issue-base.foundation.breadcrumbs.breadcrumb-current-issue-container"]',
 	);
 
 	if (heading && breadcrumb) {
